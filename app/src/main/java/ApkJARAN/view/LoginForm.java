@@ -127,7 +127,7 @@ public class LoginForm extends javax.swing.JFrame {
         String password = new String(jPasswordField.getPassword());
                 
         if(username.isEmpty() || password.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Username dan password wajib diisi, sayang~ 💕", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Username dan password wajib diisi", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
@@ -136,7 +136,7 @@ public class LoginForm extends javax.swing.JFrame {
             if (user != null) {
                 for (User u : loginHistory) {
                     if (u.getUsername().equalsIgnoreCase(username)) {
-                        JOptionPane.showMessageDialog(this, "User ini sudah login sebelumnya, sayang~ 😘", "Info", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "User ini sudah login sebelumnya", "Info", JOptionPane.INFORMATION_MESSAGE);
                         return;
                     }
                 }
@@ -152,13 +152,13 @@ public class LoginForm extends javax.swing.JFrame {
                 } else if (posisi.equalsIgnoreCase("Member")) {
                     new UserDashboard().setVisible(true);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Posisi tidak valid, hubungi admin ya~", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Posisi tidak valid, hubungi admin ya", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
 
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(this, "Username atau password salah, sayangku 💔", "Login Gagal", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Username atau password salah", "Login Gagal", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);

@@ -351,11 +351,11 @@ public class BantuanForm extends javax.swing.JFrame {
             int id = Integer.parseInt(jTable1.getValueAt(row, 5).toString());
             boolean success = controller.delete(id);
             if (success) {
-                JOptionPane.showMessageDialog(this, "Data berhasil dihapus yaa 😢");
+                JOptionPane.showMessageDialog(this, "Data berhasil dihapus ya");
                 loadTable();
                 clearForm();
             } else {
-                    JOptionPane.showMessageDialog(this, "Gagal menghapus data 😔", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Gagal menghapus data", "Error", JOptionPane.ERROR_MESSAGE);
             }
             
             

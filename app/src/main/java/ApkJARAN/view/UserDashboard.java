@@ -26,11 +26,11 @@ public class UserDashboard extends javax.swing.JFrame {
             controller = new PelaporController();
             tampilkanDataKeTabel();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Gagal konek controller 😥: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Gagal konek controller: " + e.getMessage());
         }
 
         // Sembunyikan scrollpane (tabel) saat pertama kali tampil
-        jScrollPane1.setVisible(false); // <- Tambahan penting ini yaa 😘
+        jScrollPane1.setVisible(false); // <- Tambahan penting ini yaa
 
         jCheckBox1.addActionListener(evt -> {
             jScrollPane1.setVisible(jCheckBox1.isSelected());
@@ -260,12 +260,12 @@ public class UserDashboard extends javax.swing.JFrame {
         String telp = noTelp.getText();
 
         if (tipePelapor.equals("Pilih...") || almt.isEmpty() || kebutuhanKhusus.equals("Pilih...") || jumlahKKStr.isEmpty() || telp.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Isi semua kolom dulu yaa 😤");
+            JOptionPane.showMessageDialog(null, "Isi semua kolom dulu ya");
             return;
         }
 
         if (!jumlahKKStr.matches("\\d+")) {
-            JOptionPane.showMessageDialog(this, "Jumlah KK harus angka, sayang 💕");
+            JOptionPane.showMessageDialog(this, "Jumlah KK harus angka");
             return;
         }
 
@@ -278,7 +278,7 @@ public class UserDashboard extends javax.swing.JFrame {
             int confirm = JOptionPane.showConfirmDialog(this, "Apakah Kamu Sudah Yakin Dengan Laporanmu?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
                 controller.kirimPelapor(tipePelapor, almt, kebutuhanKhusus, Integer.parseInt(jumlahKKStr), telp, Session.loggedInUsername);
-                JOptionPane.showMessageDialog(this, "Data berhasil dikirim, Loveee 💌");
+                JOptionPane.showMessageDialog(this, "Data berhasil dikirim");
 
                 // reset form
                 pelapor.setSelectedIndex(0);

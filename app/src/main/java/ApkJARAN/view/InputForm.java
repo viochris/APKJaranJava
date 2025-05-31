@@ -367,14 +367,14 @@ public class InputForm extends javax.swing.JFrame {
                 int id = Integer.parseInt(jTable1.getModel().getValueAt(selectedRow, 8).toString());
                 boolean success = controller.hapusData(id);
                 if (success) {
-                    JOptionPane.showMessageDialog(this, "Data berhasil dihapus yaa 😢");
+                    JOptionPane.showMessageDialog(this, "Data berhasil dihapus ya");
                     tampilkanDataKeTabel();
                 } else {
-                    JOptionPane.showMessageDialog(this, "Gagal menghapus data 😔", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Gagal menghapus data", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Pilih dulu baris yang mau dihapus yaa 😘");
+            JOptionPane.showMessageDialog(this, "Pilih dulu baris yang mau dihapus ya");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -396,9 +396,9 @@ public class InputForm extends javax.swing.JFrame {
         || kebutuhan.getSelectedItem().equals("Pilih...") || status.getSelectedItem().equals("Pilih...")
         || jumlahKKText.getText().isEmpty() || noTelp.getText().isEmpty()) {
 
-        JOptionPane.showMessageDialog(null, "Semua kolom harus diisi dulu yaa, Sayang 💖", "Peringatan", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Semua kolom harus diisi dulu ya", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (!jumlahKKText.getText().matches("\\d+")) {
-            JOptionPane.showMessageDialog(null, "Jumlah KK harus berupa angka yaa 😅", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Jumlah KK harus berupa angka ya", "Peringatan", JOptionPane.WARNING_MESSAGE);
         } else if (!noTelp.getText().matches("\\d+") || !noTelp.getText().startsWith("62") || !noTelp.getText().matches("^62\\d{8,12}$")) {
             JOptionPane.showMessageDialog(null, "Nomor telepon Harus Berupa Angka, dimulai dengan 62, dan berjumlah 10-14 angka", "Peringatan", JOptionPane.WARNING_MESSAGE);
         }else {
@@ -411,7 +411,7 @@ public class InputForm extends javax.swing.JFrame {
 
             boolean berhasil = controller.simpanData(nama, almt, kebutuhanKhusus, sts, jumlahKK, noTelpon, Session.loggedInUsername);
             if (berhasil) {
-                JOptionPane.showMessageDialog(null, "Data berhasil disimpan! 🥰", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Data berhasil disimpan!", "Sukses", JOptionPane.INFORMATION_MESSAGE);
 
                 pelapor.setSelectedIndex(0);
                 alamat.setText("");
@@ -422,7 +422,7 @@ public class InputForm extends javax.swing.JFrame {
 
                 tampilkanDataKeTabel(); // Refresh tabel
             } else {
-                JOptionPane.showMessageDialog(null, "Gagal menyimpan data, coba lagi yaa 💔", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Gagal menyimpan data, coba lagi ya", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -435,9 +435,9 @@ public class InputForm extends javax.swing.JFrame {
             || kebutuhan.getSelectedItem().equals("Pilih...") || status.getSelectedItem().equals("Pilih...")
             || jumlahKKText.getText().isEmpty() || noTelp.getText().isEmpty()) {
 
-            JOptionPane.showMessageDialog(null, "Semua kolom harus diisi dulu yaa, Sayang 💖", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Semua kolom harus diisi dulu yaa", "Peringatan", JOptionPane.WARNING_MESSAGE);
             } else if (!jumlahKKText.getText().matches("\\d+")) {
-                JOptionPane.showMessageDialog(null, "Jumlah KK harus berupa angka yaa 😅", "Peringatan", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Jumlah KK harus berupa angka", "Peringatan", JOptionPane.WARNING_MESSAGE);
             }else if (!noTelp.getText().matches("\\d+") || !noTelp.getText().startsWith("62") || !noTelp.getText().matches("^62\\d{8,12}$")) {
             JOptionPane.showMessageDialog(null, "Nomor telepon Harus Berupa Angka, dimulai dengan 62, dan berjumlah 10-14 angka", "Peringatan", JOptionPane.WARNING_MESSAGE);
             }else {
@@ -459,10 +459,10 @@ public class InputForm extends javax.swing.JFrame {
 
                     boolean berhasil = controller.updateData(id, nama, almt, kebutuhanKhusus, sts, jumlahKK, noTelpon);
                     if (berhasil) {
-                        JOptionPane.showMessageDialog(this, "Data berhasil diedit, Sayangkuu 💕");
+                        JOptionPane.showMessageDialog(this, "Data berhasil diedit");
                         tampilkanDataKeTabel();
                     } else {
-                        JOptionPane.showMessageDialog(this, "Data gagal diupdate 😢", "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "Data gagal diupdate", "Error", JOptionPane.ERROR_MESSAGE);
                     }
 
                     // Reset form input
@@ -474,7 +474,7 @@ public class InputForm extends javax.swing.JFrame {
                     noTelp.setText("");
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Pilih dulu baris yang mau diedit yaa 😘");
+                JOptionPane.showMessageDialog(this, "Pilih dulu baris yang mau diedit ya");
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
