@@ -145,7 +145,7 @@ public class BantuanForm extends javax.swing.JFrame {
 
         Keterangan.setText("Tidak Ada");
 
-        NamaBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih...", "Nasi", "Roti", "Pakaian", "Minuman" }));
+        NamaBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih...", "Nasi", "Roti", "Pakaian", "Minuman", "Lainnya" }));
         NamaBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NamaBarangActionPerformed(evt);
