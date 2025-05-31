@@ -27,7 +27,7 @@ public class PelaporController {
         else tingkat = "Berat 🚨";
 
         Date tanggalSekarang = Date.valueOf(LocalDate.now());
-        model.tambahPelapor(tipe, alamat, kebutuhan, jumlahKK, telp, tingkat, "Pilih...", username, tanggalSekarang);
+        model.tambahPelapor(tipe, alamat, kebutuhan, jumlahKK, telp, tingkat, "Belum Ditangani", username, tanggalSekarang);
     }
 
     public ArrayList<String[]> getDataPelapor(String username) throws Exception {
