@@ -38,22 +38,22 @@ public class BantuanForm extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        btnBatal = new javax.swing.JButton();
-        btnEdit = new javax.swing.JButton();
-        btnTambah = new javax.swing.JButton();
-        btnHapus = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
+        Table = new javax.swing.JTable();
+        kategoriLabel = new javax.swing.JLabel();
+        kategoriBarangLabel = new javax.swing.JLabel();
+        namaBarangLabel = new javax.swing.JLabel();
+        batalBtn = new javax.swing.JButton();
+        editBtn = new javax.swing.JButton();
+        tambahBtn = new javax.swing.JButton();
+        hapusBtn = new javax.swing.JButton();
+        closeBtn = new javax.swing.JButton();
         kategori = new javax.swing.JComboBox<>();
-        KategoriBarang = new javax.swing.JComboBox<>();
-        label = new javax.swing.JLabel();
-        Kuantitas = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        Keterangan = new javax.swing.JTextField();
-        NamaBarang = new javax.swing.JComboBox<>();
+        kategoriBarang = new javax.swing.JComboBox<>();
+        kuantitasLabel = new javax.swing.JLabel();
+        kuantitas = new javax.swing.JTextField();
+        keteranganLabel = new javax.swing.JLabel();
+        keterangan = new javax.swing.JTextField();
+        namaBarang = new javax.swing.JComboBox<>();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -61,7 +61,7 @@ public class BantuanForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -72,54 +72,54 @@ public class BantuanForm extends javax.swing.JFrame {
                 "Kategori", "Kategori Barang", "Barang", "Jumlah", "Keterangan"
             }
         ));
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                TableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Table);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Kategori");
+        kategoriLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kategoriLabel.setText("Kategori");
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Kategori Barang");
+        kategoriBarangLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kategoriBarangLabel.setText("Kategori Barang");
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Nama Barang");
+        namaBarangLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        namaBarangLabel.setText("Nama Barang");
 
-        btnBatal.setText("Batal");
-        btnBatal.addActionListener(new java.awt.event.ActionListener() {
+        batalBtn.setText("Batal");
+        batalBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBatalActionPerformed(evt);
-            }
-        });
-
-        btnEdit.setText("Edit");
-        btnEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditActionPerformed(evt);
+                batalBtnActionPerformed(evt);
             }
         });
 
-        btnTambah.setText("Tambah");
-        btnTambah.addActionListener(new java.awt.event.ActionListener() {
+        editBtn.setText("Edit");
+        editBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTambahActionPerformed(evt);
+                editBtnActionPerformed(evt);
             }
         });
 
-        btnHapus.setText("Hapus");
-        btnHapus.addActionListener(new java.awt.event.ActionListener() {
+        tambahBtn.setText("Tambah");
+        tambahBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHapusActionPerformed(evt);
+                tambahBtnActionPerformed(evt);
             }
         });
 
-        btnLogout.setText("Close");
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+        hapusBtn.setText("Hapus");
+        hapusBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
+                hapusBtnActionPerformed(evt);
+            }
+        });
+
+        closeBtn.setText("Close");
+        closeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeBtnActionPerformed(evt);
             }
         });
 
@@ -130,25 +130,25 @@ public class BantuanForm extends javax.swing.JFrame {
             }
         });
 
-        KategoriBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih...", "Sandang", "Pangan", "Lainnya" }));
-        KategoriBarang.addActionListener(new java.awt.event.ActionListener() {
+        kategoriBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih...", "Sandang", "Pangan", "Lainnya" }));
+        kategoriBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KategoriBarangActionPerformed(evt);
+                kategoriBarangActionPerformed(evt);
             }
         });
 
-        label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label.setText("Kuantitas");
+        kuantitasLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kuantitasLabel.setText("Kuantitas");
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Keterangan");
+        keteranganLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        keteranganLabel.setText("Keterangan");
 
-        Keterangan.setText("Tidak Ada");
+        keterangan.setText("Tidak Ada");
 
-        NamaBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih...", "Nasi", "Roti", "Pakaian", "Minuman", "Lainnya" }));
-        NamaBarang.addActionListener(new java.awt.event.ActionListener() {
+        namaBarang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih...", "Nasi", "Roti", "Pakaian", "Minuman", "Lainnya" }));
+        namaBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NamaBarangActionPerformed(evt);
+                namaBarangActionPerformed(evt);
             }
         });
 
@@ -163,40 +163,40 @@ public class BantuanForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
+                    .addComponent(kategoriBarangLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(kategoriLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(keteranganLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(KategoriBarang, 0, 82, Short.MAX_VALUE)
+                            .addComponent(kategoriBarang, 0, 82, Short.MAX_VALUE)
                             .addComponent(kategori, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
+                            .addComponent(kuantitasLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(namaBarangLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Kuantitas)
-                            .addComponent(NamaBarang, 0, 82, Short.MAX_VALUE)))
-                    .addComponent(Keterangan))
+                            .addComponent(kuantitas)
+                            .addComponent(namaBarang, 0, 82, Short.MAX_VALUE)))
+                    .addComponent(keterangan))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnHapus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnTambah))
+                            .addComponent(hapusBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tambahBtn))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(btnEdit))
+                                .addComponent(editBtn))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(17, 17, 17)
-                                .addComponent(btnBatal)))
+                                .addComponent(batalBtn)))
                         .addGap(22, 22, 22))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnLogout)
+                        .addComponent(closeBtn)
                         .addGap(66, 66, 66))))
         );
         layout.setVerticalGroup(
@@ -209,37 +209,37 @@ public class BantuanForm extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnTambah)
-                                    .addComponent(btnEdit))
+                                    .addComponent(tambahBtn)
+                                    .addComponent(editBtn))
                                 .addGap(7, 7, 7)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnHapus)
-                                    .addComponent(btnBatal)))
+                                    .addComponent(hapusBtn)
+                                    .addComponent(batalBtn)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(namaBarangLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGap(2, 2, 2)
-                                        .addComponent(NamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(namaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Kuantitas, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))))
+                                    .addComponent(kuantitasLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(kuantitas, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnLogout)
+                        .addComponent(closeBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(kategoriLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(kategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(KategoriBarang))
+                            .addComponent(kategoriBarangLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(kategoriBarang))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Keterangan))
+                            .addComponent(keteranganLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(keterangan))
                         .addGap(72, 72, 72)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -249,40 +249,40 @@ public class BantuanForm extends javax.swing.JFrame {
 
     private void loadTable() {
         DefaultTableModel model = controller.loadTable();
-        jTable1.setModel(model);
+        Table.setModel(model);
         
-        jTable1.getColumnModel().getColumn(5).setMinWidth(0);
-        jTable1.getColumnModel().getColumn(5).setMaxWidth(0);
-        jTable1.getColumnModel().getColumn(5).setWidth(0);
+        Table.getColumnModel().getColumn(5).setMinWidth(0);
+        Table.getColumnModel().getColumn(5).setMaxWidth(0);
+        Table.getColumnModel().getColumn(5).setWidth(0);
 
     }
 
     private void clearForm() {
         kategori.setSelectedIndex(0);
-        KategoriBarang.setSelectedIndex(0);
-        NamaBarang.setSelectedIndex(0);
-        Kuantitas.setText("");
-        Keterangan.setText("Tidak Ada");
+        kategoriBarang.setSelectedIndex(0);
+        namaBarang.setSelectedIndex(0);
+        kuantitas.setText("");
+        keterangan.setText("Tidak Ada");
     }
 
 
     
-    private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
+    private void batalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalBtnActionPerformed
         clearForm();
-    }//GEN-LAST:event_btnBatalActionPerformed
+    }//GEN-LAST:event_batalBtnActionPerformed
 
-    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        int row = jTable1.getSelectedRow();
+    private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
+        int row = Table.getSelectedRow();
         if (row == -1) {
             JOptionPane.showMessageDialog(this, "Pilih data yang ingin diedit!", "Peringatan", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
         String kategoriVal = (String) kategori.getSelectedItem();
-        String kategoriBarangVal = (String) KategoriBarang.getSelectedItem();
-        String namaBarangVal = (String) NamaBarang.getSelectedItem();
-        String kuantitasVal = Kuantitas.getText().trim();
-        String keteranganVal = Keterangan.getText().trim();
+        String kategoriBarangVal = (String) kategoriBarang.getSelectedItem();
+        String namaBarangVal = (String) namaBarang.getSelectedItem();
+        String kuantitasVal = kuantitas.getText().trim();
+        String keteranganVal = keterangan.getText().trim();
 
         if (kategoriVal.equals("Pilih...") || kategoriBarangVal.equals("Pilih...") ||
             namaBarangVal.equals("Pilih...") || kuantitasVal.isEmpty() || keteranganVal.isEmpty()) {
@@ -299,7 +299,7 @@ public class BantuanForm extends javax.swing.JFrame {
 
             int confirm = JOptionPane.showConfirmDialog(this, "Yakin ingin Mengubah data?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
-                int id = Integer.parseInt(jTable1.getValueAt(row, 5).toString()); // ambil ID tersembunyi
+                int id = Integer.parseInt(Table.getValueAt(row, 5).toString()); // ambil ID tersembunyi
                 controller.update(id, kategoriVal, kategoriBarangVal, namaBarangVal, jumlah, keteranganVal);
 
 
@@ -309,14 +309,14 @@ public class BantuanForm extends javax.swing.JFrame {
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Kuantitas harus angka!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnEditActionPerformed
+    }//GEN-LAST:event_editBtnActionPerformed
 
-    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
+    private void tambahBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahBtnActionPerformed
         String kategoriVal = (String) kategori.getSelectedItem();
-        String kategoriBarangVal = (String) KategoriBarang.getSelectedItem();
-        String namaBarangVal = (String) NamaBarang.getSelectedItem();
-        String kuantitasVal = Kuantitas.getText().trim();
-        String keteranganVal = Keterangan.getText().trim();
+        String kategoriBarangVal = (String) kategoriBarang.getSelectedItem();
+        String namaBarangVal = (String) namaBarang.getSelectedItem();
+        String kuantitasVal = kuantitas.getText().trim();
+        String keteranganVal = keterangan.getText().trim();
 
         if (kategoriVal.equals("Pilih...") || kategoriBarangVal.equals("Pilih...") || 
             namaBarangVal.equals("Pilih...") || kuantitasVal.isEmpty() || keteranganVal.isEmpty()) {
@@ -337,10 +337,10 @@ public class BantuanForm extends javax.swing.JFrame {
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Kuantitas harus angka!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnTambahActionPerformed
+    }//GEN-LAST:event_tambahBtnActionPerformed
 
-    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
-        int row = jTable1.getSelectedRow();
+    private void hapusBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusBtnActionPerformed
+        int row = Table.getSelectedRow();
         if (row == -1) {
             JOptionPane.showMessageDialog(this, "Pilih data yang ingin dihapus!", "Peringatan", JOptionPane.WARNING_MESSAGE);
             return;
@@ -348,7 +348,7 @@ public class BantuanForm extends javax.swing.JFrame {
 
         int confirm = JOptionPane.showConfirmDialog(this, "Yakin ingin menghapus data?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
-            int id = Integer.parseInt(jTable1.getValueAt(row, 5).toString());
+            int id = Integer.parseInt(Table.getValueAt(row, 5).toString());
             boolean success = controller.delete(id);
             if (success) {
                 JOptionPane.showMessageDialog(this, "Data berhasil dihapus ya");
@@ -360,36 +360,36 @@ public class BantuanForm extends javax.swing.JFrame {
             
             
         }
-    }//GEN-LAST:event_btnHapusActionPerformed
+    }//GEN-LAST:event_hapusBtnActionPerformed
 
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+    private void closeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeBtnActionPerformed
         new InputForm().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnLogoutActionPerformed
+    }//GEN-LAST:event_closeBtnActionPerformed
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        int row = jTable1.getSelectedRow();
+    private void TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableMouseClicked
+        int row = Table.getSelectedRow();
         if (row != -1) {
-            kategori.setSelectedItem(jTable1.getValueAt(row, 0).toString());
-            KategoriBarang.setSelectedItem(jTable1.getValueAt(row, 1).toString());
-            NamaBarang.setSelectedItem(jTable1.getValueAt(row, 2).toString());
-            Kuantitas.setText(jTable1.getValueAt(row, 3).toString());
-            Keterangan.setText(jTable1.getValueAt(row, 4).toString());
+            kategori.setSelectedItem(Table.getValueAt(row, 0).toString());
+            kategoriBarang.setSelectedItem(Table.getValueAt(row, 1).toString());
+            namaBarang.setSelectedItem(Table.getValueAt(row, 2).toString());
+            kuantitas.setText(Table.getValueAt(row, 3).toString());
+            keterangan.setText(Table.getValueAt(row, 4).toString());
         }
-    }//GEN-LAST:event_jTable1MouseClicked
+    }//GEN-LAST:event_TableMouseClicked
 
        
-    private void KategoriBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KategoriBarangActionPerformed
+    private void kategoriBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kategoriBarangActionPerformed
        
-    }//GEN-LAST:event_KategoriBarangActionPerformed
+    }//GEN-LAST:event_kategoriBarangActionPerformed
 
     private void kategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kategoriActionPerformed
         
     }//GEN-LAST:event_kategoriActionPerformed
 
-    private void NamaBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaBarangActionPerformed
+    private void namaBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaBarangActionPerformed
 
-    }//GEN-LAST:event_NamaBarangActionPerformed
+    }//GEN-LAST:event_namaBarangActionPerformed
 
     /**
      * @param args the command line arguments
@@ -427,24 +427,24 @@ public class BantuanForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> KategoriBarang;
-    private javax.swing.JTextField Keterangan;
-    private javax.swing.JTextField Kuantitas;
-    private javax.swing.JComboBox<String> NamaBarang;
-    private javax.swing.JButton btnBatal;
-    private javax.swing.JButton btnEdit;
-    private javax.swing.JButton btnHapus;
-    private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnTambah;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTable Table;
+    private javax.swing.JButton batalBtn;
+    private javax.swing.JButton closeBtn;
+    private javax.swing.JButton editBtn;
+    private javax.swing.JButton hapusBtn;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JComboBox<String> kategori;
-    private javax.swing.JLabel label;
+    private javax.swing.JComboBox<String> kategoriBarang;
+    private javax.swing.JLabel kategoriBarangLabel;
+    private javax.swing.JLabel kategoriLabel;
+    private javax.swing.JTextField keterangan;
+    private javax.swing.JLabel keteranganLabel;
+    private javax.swing.JTextField kuantitas;
+    private javax.swing.JLabel kuantitasLabel;
+    private javax.swing.JComboBox<String> namaBarang;
+    private javax.swing.JLabel namaBarangLabel;
+    private javax.swing.JButton tambahBtn;
     // End of variables declaration//GEN-END:variables
 }

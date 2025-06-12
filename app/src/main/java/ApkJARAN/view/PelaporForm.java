@@ -32,8 +32,8 @@ public class PelaporForm extends javax.swing.JFrame {
         // Sembunyikan scrollpane (tabel) saat pertama kali tampil
         jScrollPane1.setVisible(false); // <- Tambahan penting ini yaa
 
-        jCheckBox1.addActionListener(evt -> {
-            jScrollPane1.setVisible(jCheckBox1.isSelected());
+        resultCheck.addActionListener(evt -> {
+            jScrollPane1.setVisible(resultCheck.isSelected());
             revalidate();
             repaint();
         });
@@ -50,57 +50,57 @@ public class PelaporForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jToggleButton1 = new javax.swing.JToggleButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        logoutBtn = new javax.swing.JButton();
+        pelaporLabel = new javax.swing.JLabel();
+        alamatLabel = new javax.swing.JLabel();
+        kebutuhanLabel = new javax.swing.JLabel();
         alamat = new javax.swing.JTextField();
         kebutuhan = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jumlahKKText = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        kirimBtn = new javax.swing.JButton();
+        totalKKLabel = new javax.swing.JLabel();
+        totalKK = new javax.swing.JTextField();
+        noTelpLabel = new javax.swing.JLabel();
         pelapor = new javax.swing.JComboBox<>();
         noTelp = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        resultCheck = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Table = new javax.swing.JTable();
 
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Logout");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        logoutBtn.setText("Logout");
+        logoutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                logoutBtnActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Pelapor");
+        pelaporLabel.setText("Pelapor");
 
-        jLabel3.setText("Alamat");
+        alamatLabel.setText("Alamat");
 
-        jLabel2.setText("Kebutuhan Khusus:");
+        kebutuhanLabel.setText("Kebutuhan Khusus:");
 
         kebutuhan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih...", "Yes", "No" }));
 
-        jButton2.setText("Kirim");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        kirimBtn.setText("Kirim");
+        kirimBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                kirimBtnActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("Jumlah KK");
+        totalKKLabel.setText("Jumlah KK");
 
-        jumlahKKText.addActionListener(new java.awt.event.ActionListener() {
+        totalKK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jumlahKKTextActionPerformed(evt);
+                totalKKActionPerformed(evt);
             }
         });
 
-        jLabel5.setText("No. Telp");
+        noTelpLabel.setText("No. Telp");
 
         pelapor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih...", "Warga", "RT/ RW", "Lainnya", " " }));
 
@@ -110,14 +110,14 @@ public class PelaporForm extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setText("Result");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        resultCheck.setText("Result");
+        resultCheck.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                resultCheckActionPerformed(evt);
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -128,12 +128,12 @@ public class PelaporForm extends javax.swing.JFrame {
                 "Pelapor", "Alamat", "Kebutuhan Khusus", "Jumlah KK", "No. Telp", "Status", "Date"
             }
         ));
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        Table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                TableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Table);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,7 +141,7 @@ public class PelaporForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(logoutBtn)
                 .addGap(27, 27, 27))
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
@@ -149,25 +149,25 @@ public class PelaporForm extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2)
+                            .addComponent(resultCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(kebutuhanLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(kirimBtn)
                             .addComponent(kebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(pelaporLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(alamatLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(pelapor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(alamat, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(61, 61, 61)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(totalKKLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(noTelpLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jumlahKKText, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(totalKK, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(noTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 73, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -176,13 +176,13 @@ public class PelaporForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(logoutBtn)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jumlahKKText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(totalKK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(47, 47, 47))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,24 +191,24 @@ public class PelaporForm extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(alamat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(totalKKLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(noTelpLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(noTelp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(19, 19, 19)))
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(kebutuhanLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(kebutuhan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pelaporLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(alamatLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(kirimBtn)
                 .addGap(32, 32, 32)
-                .addComponent(jCheckBox1)
+                .addComponent(resultCheck)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(11, Short.MAX_VALUE))
@@ -229,34 +229,34 @@ public class PelaporForm extends javax.swing.JFrame {
                 model.addRow(row);
             }
 
-            jTable1.setModel(model);
-            jTable1.getColumnModel().getColumn(7).setMinWidth(0);
-            jTable1.getColumnModel().getColumn(7).setMaxWidth(0);
-            jTable1.getColumnModel().getColumn(7).setWidth(0);
+            Table.setModel(model);
+            Table.getColumnModel().getColumn(7).setMinWidth(0);
+            Table.getColumnModel().getColumn(7).setMaxWidth(0);
+            Table.getColumnModel().getColumn(7).setWidth(0);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error tampilkan data: " + e.getMessage());
         }
     }
 
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         new LoginForm().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_logoutBtnActionPerformed
 
-    private void jumlahKKTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jumlahKKTextActionPerformed
+    private void totalKKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalKKActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jumlahKKTextActionPerformed
+    }//GEN-LAST:event_totalKKActionPerformed
 
     private void noTelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noTelpActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_noTelpActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void kirimBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kirimBtnActionPerformed
         String tipePelapor = pelapor.getSelectedItem().toString();
         String almt = alamat.getText();
         String kebutuhanKhusus = kebutuhan.getSelectedItem().toString();
-        String jumlahKKStr = jumlahKKText.getText();
+        String jumlahKKStr = totalKK.getText();
         String telp = noTelp.getText();
 
         if (tipePelapor.equals("Pilih...") || almt.isEmpty() || kebutuhanKhusus.equals("Pilih...") || jumlahKKStr.isEmpty() || telp.isEmpty()) {
@@ -284,7 +284,7 @@ public class PelaporForm extends javax.swing.JFrame {
                 pelapor.setSelectedIndex(0);
                 alamat.setText("");
                 kebutuhan.setSelectedIndex(0);
-                jumlahKKText.setText("");
+                totalKK.setText("");
                 noTelp.setText("");
 
                 tampilkanDataKeTabel();
@@ -292,22 +292,22 @@ public class PelaporForm extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Gagal kirim data: " + e.getMessage());
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_kirimBtnActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void resultCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultCheckActionPerformed
         
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_resultCheckActionPerformed
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        int selectedRow = jTable1.getSelectedRow();
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+    private void TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableMouseClicked
+        int selectedRow = Table.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) Table.getModel();
 
         pelapor.setSelectedItem(model.getValueAt(selectedRow, 0));
         alamat.setText(model.getValueAt(selectedRow, 1).toString());
         kebutuhan.setSelectedItem(model.getValueAt(selectedRow, 2));
-        jumlahKKText.setText(model.getValueAt(selectedRow, 3).toString());
+        totalKK.setText(model.getValueAt(selectedRow, 3).toString());
         noTelp.setText(model.getValueAt(selectedRow, 4).toString());
-    }//GEN-LAST:event_jTable1MouseClicked
+    }//GEN-LAST:event_TableMouseClicked
 
     
     /**
@@ -349,21 +349,21 @@ public class PelaporForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Table;
     private javax.swing.JTextField alamat;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel alamatLabel;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JTextField jumlahKKText;
     private javax.swing.JComboBox<String> kebutuhan;
+    private javax.swing.JLabel kebutuhanLabel;
+    private javax.swing.JButton kirimBtn;
+    private javax.swing.JButton logoutBtn;
     private javax.swing.JTextField noTelp;
+    private javax.swing.JLabel noTelpLabel;
     private javax.swing.JComboBox<String> pelapor;
+    private javax.swing.JLabel pelaporLabel;
+    private javax.swing.JCheckBox resultCheck;
+    private javax.swing.JTextField totalKK;
+    private javax.swing.JLabel totalKKLabel;
     // End of variables declaration//GEN-END:variables
 }
