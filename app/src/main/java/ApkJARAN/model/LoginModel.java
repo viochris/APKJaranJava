@@ -21,13 +21,13 @@ class BaseModel {
     }
 }
 
-public class UserModel extends BaseModel {
+public class LoginModel extends BaseModel {
 
-    public UserModel() throws SQLException {
+    public LoginModel() throws SQLException {
         super();
     }
 
-    public User login(String username, String password) throws SQLException {
+    public Login login(String username, String password) throws SQLException {
         String sql = "SELECT posisi FROM users WHERE username = ? AND password = ?";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.setString(1, username);
@@ -36,7 +36,7 @@ public class UserModel extends BaseModel {
 
         if (rs.next()) {
             String posisi = rs.getString("posisi");
-            return new User(username, posisi);
+            return new Login(username, posisi);
         } else {
             return null;
         }

@@ -8,11 +8,11 @@ package ApkJARAN.model;
  *
  * @author Silvio
  */
-public class User {
+public class Login {
         private String username;
     private String posisi;
 
-    public User(String username, String posisi) {
+    public Login(String username, String posisi) {
         this.username = username;
         this.posisi = posisi;
     }

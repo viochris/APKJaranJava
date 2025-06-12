@@ -5,10 +5,10 @@
 package ApkJARAN.view;
 
 import java.util.ArrayList;
-import ApkJARAN.view.UserDashboard;
+import ApkJARAN.view.PelaporForm;
 import ApkJARAN.view.InputForm;
 import ApkJARAN.controller.LoginController;
-import ApkJARAN.model.User;
+import ApkJARAN.model.Login;
 import javax.swing.JOptionPane;
 
 
@@ -22,7 +22,7 @@ public class LoginForm extends javax.swing.JFrame {
     /**
      * Creates new form LoginForm
      */
-    private ArrayList<User> loginHistory = new ArrayList<>();
+    private ArrayList<Login> loginHistory = new ArrayList<>();
     
     public LoginForm() {
         initComponents();
@@ -132,9 +132,9 @@ public class LoginForm extends javax.swing.JFrame {
         }
         
         try {
-            User user = loginController.handleLogin(username, password);
+            Login user = loginController.handleLogin(username, password);
             if (user != null) {
-                for (User u : loginHistory) {
+                for (Login u : loginHistory) {
                     if (u.getUsername().equalsIgnoreCase(username)) {
                         JOptionPane.showMessageDialog(this, "User ini sudah login sebelumnya", "Info", JOptionPane.INFORMATION_MESSAGE);
                         return;
@@ -150,7 +150,7 @@ public class LoginForm extends javax.swing.JFrame {
                 if (posisi.equalsIgnoreCase("Admin")) {
                     new InputForm().setVisible(true);
                 } else if (posisi.equalsIgnoreCase("Member")) {
-                    new UserDashboard().setVisible(true);
+                    new PelaporForm().setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(this, "Posisi tidak valid, hubungi admin ya", "Error", JOptionPane.ERROR_MESSAGE);
                     return;

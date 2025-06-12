@@ -4,21 +4,21 @@
  */
 package ApkJARAN.controller;
 
-import ApkJARAN.model.User;
-import ApkJARAN.model.UserModel;
+import ApkJARAN.model.Login;
+import ApkJARAN.model.LoginModel;
 
 /**
  *
  * @author Silvio
  */
 public class LoginController {
-    private UserModel userModel;
+    private LoginModel userModel;
 
     public LoginController() throws Exception {
-        userModel = new UserModel();
+        userModel = new LoginModel();
     }
 
-    public User handleLogin(String username, String password) throws Exception {
+    public Login handleLogin(String username, String password) throws Exception {
         return userModel.login(username, password);
     }
 }
