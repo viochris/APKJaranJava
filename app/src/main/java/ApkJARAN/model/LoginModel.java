@@ -5,6 +5,8 @@
 package ApkJARAN.model;
 
 import java.sql.*;
+//import java.security.MessageDigest;
+//import java.security.NoSuchAlgorithmException;
 
 /**
  *
@@ -26,8 +28,26 @@ public class LoginModel extends BaseModel {
     public LoginModel() throws SQLException {
         super();
     }
+    
+    // 🛡️ Fungsi hashing password pakai SHA-256
+//    private String hashPassword(String password) {
+//        try {
+//            MessageDigest md = MessageDigest.getInstance("SHA-256");
+//            byte[] hashed = md.digest(password.getBytes());
+//            StringBuilder sb = new StringBuilder();
+//            for (byte b : hashed) {
+//                sb.append(String.format("%02x", b)); // ubah byte ke format hex
+//            }
+//            return sb.toString();
+//        } catch (NoSuchAlgorithmException e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
 
     public Login login(String username, String password) throws SQLException {
+//        String hashedPassword = hashPassword(password);
+        
         String sql = "SELECT posisi FROM users WHERE username = ? AND password = ?";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.setString(1, username);

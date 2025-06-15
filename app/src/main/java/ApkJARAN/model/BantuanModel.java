@@ -13,12 +13,12 @@ import java.util.List;
  * @author Silvio
  */
 public class BantuanModel {
-public static Connection getConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/laporan_banjir";
-        String user = "root";
-        String pass = "";
-        return DriverManager.getConnection(url, user, pass);
-    }
+    public static Connection getConnection() throws SQLException {
+            String url = "jdbc:mysql://localhost:3306/laporan_banjir";
+            String user = "root";
+            String pass = "";
+            return DriverManager.getConnection(url, user, pass);
+        }
 
     public List<Object[]> getAllData() throws SQLException {
         List<Object[]> data = new ArrayList<>();

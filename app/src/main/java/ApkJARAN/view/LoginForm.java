@@ -47,7 +47,7 @@ public class LoginForm extends javax.swing.JFrame {
         pswdLabel = new javax.swing.JLabel();
         user = new javax.swing.JTextField();
         pswd = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        LoginButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,10 +66,10 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        LoginButton.setText("Login");
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                LoginButtonActionPerformed(evt);
             }
         });
 
@@ -93,7 +93,7 @@ public class LoginForm extends javax.swing.JFrame {
                             .addComponent(pswd, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(155, 155, 155)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -110,7 +110,7 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(pswdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(LoginButton)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -122,7 +122,7 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         String username = user.getText();
         String password = new String(pswd.getPassword());
                 
@@ -136,7 +136,8 @@ public class LoginForm extends javax.swing.JFrame {
             if (user != null) {
                 for (Login u : loginHistory) {
                     if (u.getUsername().equalsIgnoreCase(username)) {
-                        JOptionPane.showMessageDialog(this, "User ini sudah login sebelumnya", "Info", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "User ini sudah login sebelumnya", "Info", 
+                                JOptionPane.INFORMATION_MESSAGE);
                         return;
                     }
                 }
@@ -152,18 +153,20 @@ public class LoginForm extends javax.swing.JFrame {
                 } else if (posisi.equalsIgnoreCase("Member")) {
                     new PelaporForm().setVisible(true);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Posisi tidak valid, hubungi admin ya", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Posisi tidak valid, hubungi admin ya", "Error", 
+                            JOptionPane.ERROR_MESSAGE);
                     return;
                 }
 
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(this, "Username atau password salah", "Login Gagal", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Username atau password salah", "Login Gagal", 
+                        JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_LoginButtonActionPerformed
 
     private void pswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswdActionPerformed
         // TODO add your handling code here:
@@ -205,7 +208,7 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton LoginButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField pswd;
     private javax.swing.JLabel pswdLabel;
